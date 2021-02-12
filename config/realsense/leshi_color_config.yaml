@@ -44,7 +44,7 @@ extrinsicRotation: !!opencv-matrix
    rows: 3
    cols: 3
    dt: d
-   data: [0.99964621,  0.01105994,  0.02418954,
+   data: [0.982291,  0.01105994,  0.02418954,
            -0.01088975,  0.9999151,  -0.00715601, 
            -0.02426663,  0.00689006,  0.99968178]
 #Translation from camera frame to imu frame, imu^T_cam
@@ -57,7 +57,7 @@ extrinsicTranslation: !!opencv-matrix
 #feature traker paprameters
 max_cnt: 150            # max feature number in feature tracking
 min_dist: 30            # min distance between two features 
-freq: 15                # frequence (Hz) of publish tracking result. At least 10Hz for good estimation. If set 0, the frequence will be same as raw image 
+freq: 10                # frequence (Hz) of publish tracking result. At least 10Hz for good estimation. If set 0, the frequence will be same as raw image 
 F_threshold: 1.0        # ransac threshold (pixel)
 show_track: 1           # publish tracking image as topic
 equalize: 1            # if image is too dark or light, trun on equalize to find enough features
@@ -101,7 +101,7 @@ gyr_w: 2.0770889e-06
 g_norm: 9.7949     # gravity magnitude
 
 #loop closure parameters
-loop_closure: 0                    # start loop closure
+loop_closure: 0                   # start loop closure
 fast_relocalization: 1             # useful in real-time and large project
 load_previous_pose_graph: 0        # load and reuse previous pose graph; load from 'pose_graph_save_path'
 pose_graph_save_path: "/home/tarmy/ros/fsb/catkin_visn/output/pose_graph/" # save and load path

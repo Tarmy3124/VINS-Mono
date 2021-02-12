@@ -93,7 +93,7 @@ void odom_callback(const nav_msgs::OdometryConstPtr &odom_msg)
     nav_msgs::Odometry odometry;
     odometry.header.stamp = ros::Time(benchmark[idx - 1].t);
     odometry.header.frame_id = "world";
-    odometry.child_frame_id = "world";
+    odometry.child_frame_id = "odom";
 
     Vector3d tmp_T = baseTgt + baseRgt * Vector3d{benchmark[idx - 1].px, benchmark[idx - 1].py, benchmark[idx - 1].pz};
     odometry.pose.pose.position.x = tmp_T.x();

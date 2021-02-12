@@ -198,7 +198,8 @@ void img_callback(const sensor_msgs::CompressedImageConstPtr &img_msg)
             }
             //cv::imshow("vis", stereo_img);
             //cv::waitKey(5);
-            pub_match.publish(ptr->toImageMsg());
+            //tt1
+            //pub_match.publish(ptr->toImageMsg());
         }
     }
     ROS_INFO("whole feature tracker processing costs: %f", t_r.toc());
