@@ -2,8 +2,8 @@
 
 #common parameters
 imu_topic: "/camera/imu"
-image_topic: "/camera/color/image_raw"
-output_path: "/home/tony-ws1/output/"
+image_topic: "/camera/color/image_raw/compressed"
+output_path: "/home/tarmy/ros/fsb/catkin_visn/output/"
 
 #camera calibration 
 model_type: PINHOLE
@@ -11,15 +11,15 @@ camera_name: camera
 image_width: 640
 image_height: 480
 distortion_parameters:
-   k1: 9.2615504465028850e-02
-   k2: -1.8082438825995681e-01
-   p1: -6.5484100374765971e-04
-   p2: -3.5829351558557421e-04
+   k1: 0.09376153063728944
+   k2: -0.2003783073199601
+   p1: 0.0032603084347251764
+   p2: 0.0024849775554894025
 projection_parameters:
-   fx: 6.0970550296798035e+02
-   fy: 6.0909579671294716e+02
-   cx: 3.1916667152289227e+02
-   cy: 2.3558360480225772e+02
+   fx: 595.4425209377974
+   fy: 598.8354665247152
+   cx: 324.0472581180097
+   cy: 238.43184443151299
 
 # Extrinsic parameter between IMU and Camera.
 estimate_extrinsic: 2   # 0  Have an accurate extrinsic parameters. We will trust the following imu^R_cam, imu^T_cam, don't change it.
@@ -66,10 +66,10 @@ g_norm: 9.805       # gravity magnitude
 loop_closure: 1                    # start loop closure
 fast_relocalization: 1             # useful in real-time and large project
 load_previous_pose_graph: 0        # load and reuse previous pose graph; load from 'pose_graph_save_path'
-pose_graph_save_path: "/home/tony-ws1/output/pose_graph/" # save and load path
+pose_graph_save_path: "/home/tarmy/ros/fsb/catkin_visn/output/pose_graph/" # save and load path
 
 #unsynchronization parameters
-estimate_td: 0                     # online estimate time offset between camera and imu
+estimate_td: 1                    # online estimate time offset between camera and imu
 td: 0.000                           # initial value of time offset. unit: s. readed image clock + td = real image clock (IMU clock)
 
 #rolling shutter parameters
